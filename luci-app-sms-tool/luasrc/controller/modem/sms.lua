@@ -1,4 +1,4 @@
--- Copyright 2020-2022 Rafa³ Wabik (IceG) - From eko.one.pl forum
+-- Copyright 2020-2022 RafaÂ³ Wabik (IceG) - From eko.one.pl forum
 -- Licensed to the GNU General Public License v3.0.
 
 
@@ -90,7 +90,7 @@ function at()
 
     local at_code = http.formvalue("code")
     if at_code then
-	    local odpall = io.popen("sms_tool -d " .. devv .. " at "  ..at_code:gsub("[$]", "\\\$"):gsub("\"", "\\\"").." 2>&1")
+	    local odpall = io.popen("sms_tool -d " .. devv .. " at "  ..at_code.." 2>&1")
 	    local odp =  odpall:read("*a")
 	    odpall:close()
         http.write(tostring(odp))
