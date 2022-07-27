@@ -1,6 +1,5 @@
-
 config sms_tool 'general'
-	option pnumber '48'
+	option pnumber '63'
 	option prefix '1'
 	option ledtimeon '1'
 	option ledtimeoff '5'
@@ -10,6 +9,12 @@ config sms_tool 'general'
 	option information '1'
 	option ussd '0'
 	option pdu '0'
-    	option storage 'SM'
-    	option prestart '6'
-    	option ledtype 'D'
+	option storage 'SM'
+	option prestart '6'
+	option ledtype 'D'
+	option ussdport '/dev/ttyACM0'
+	option readport '/dev/ttyACM0'
+	option atport '/dev/ttyACM0'
+	option sendport '/dev/ttyACM0'
+
+
