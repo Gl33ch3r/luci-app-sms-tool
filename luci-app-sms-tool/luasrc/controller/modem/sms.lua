@@ -90,8 +90,8 @@ function at()
 
     local at_code = http.formvalue("code")
     if at_code then
-	    local odpall = io.popen("sms_tool -d " .. devv .. " at "  ..at_code.." 2>&1")
-	    local odp =  odpall:read("*a")
+	    local odpall = io.popen("sms_tool -d " .. devv .. " at "  ..at_code:gsub("[$]", "\\\$"):gsub("\"", "\\\"").." 2>&1")
+	    local odp =  odpall:read("*all")
 	    odpall:close()
         http.write(tostring(odp))
     else
